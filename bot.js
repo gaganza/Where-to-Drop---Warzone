@@ -1,15 +1,36 @@
-import Discord from "discord.js";
-import TOKEN from "./auth";
-import LOCATIONS from "./constants";
-
+const Discord = require("discord.js");
 const client = new Discord.Client();
+
+const auth = require("./auth.json");
+
+let locations = [
+  "Downtown",
+  "Park",
+  "Hospital",
+  "TV Station",
+  "Dam",
+  "Military Base",
+  "Quarry",
+  "Lumber",
+  "Stadium",
+  "Port",
+  "Hills",
+  "Promenade East",
+  "Promenade West",
+  "Airport",
+  "Boneyard",
+  "Superstore",
+  "Storage Town",
+  "Prison",
+  "Farmland",
+];
 
 function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function getRandomLocation() {
-  return LOCATIONS[randomInteger(0, LOCATIONS.length)];
+  return locations[randomInteger(0, locations.length)];
 }
 
 client.on("ready", () => {
@@ -29,4 +50,4 @@ client.on("message", (message) => {
   }
 });
 
-client.login(TOKEN);
+client.login(auth.token);
