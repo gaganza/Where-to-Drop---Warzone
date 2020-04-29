@@ -30,7 +30,7 @@ function randomInteger(min, max) {
 }
 
 function getRandomLocation() {
-  return locations[randomInteger(0, locations.length)];
+  return locations[randomInteger(0, locations.length - 1)];
 }
 
 client.on("ready", () => {
