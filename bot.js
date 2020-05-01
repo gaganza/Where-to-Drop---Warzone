@@ -8,7 +8,7 @@ let locations = [
   "Park",
   "Hospital",
   "TV Station",
-  "Dam",
+  "Damn",
   "Military Base",
   "Quarry",
   "Lumber",
@@ -23,6 +23,7 @@ let locations = [
   "Storage Town",
   "Prison",
   "Farmland",
+  "Easter Egg: Just insta drop"
 ];
 
 function randomInteger(min, max) {
