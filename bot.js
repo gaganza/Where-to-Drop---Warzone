@@ -8,7 +8,7 @@ let locations = [
   "Park",
   "Hospital",
   "TV Station",
-  "Damn",
+  "Dam",
   "Military Base",
   "Quarry",
   "Lumber",
