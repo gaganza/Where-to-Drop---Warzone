@@ -2,36 +2,14 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 const auth = require("./auth.json");
-
-let locations = [
-  "Downtown",
-  "Park",
-  "Hospital",
-  "TV Station",
-  "Dam",
-  "Military Base",
-  "Quarry",
-  "Lumber",
-  "Stadium",
-  "Port",
-  "Hills",
-  "Promenade East",
-  "Promenade West",
-  "Airport",
-  "Boneyard",
-  "Superstore",
-  "Storage Town",
-  "Prison",
-  "Farmland",
-  "Easter Egg: Just insta drop"
-];
+const LOCATIONS = require("./constants").LOCATIONS;
 
 function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function getRandomLocation() {
-  return locations[randomInteger(0, locations.length - 1)];
+  return LOCATIONS[randomInteger(0, LOCATIONS.length - 1)];
 }
 
 client.on("ready", () => {
@@ -45,6 +23,7 @@ client.on("message", (message) => {
     args = args.splice(1);
 
     switch (cmd) {
+      case "p":
       case "ping":
         message.reply(getRandomLocation());
     }
