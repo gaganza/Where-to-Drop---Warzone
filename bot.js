@@ -2,23 +2,14 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 const auth = require("./auth.json");
-const locations = require("./locations.json");
+const LOCATIONS = require("./constants").LOCATIONS;
 
 function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function getRandomLocation() {
-  // get random key from locations object
-  let keys = Object.keys(locations);
-  let randomKeyIndex = randomInteger(0, keys.length - 1);
-
-  // use the random key from the locations object as the 'base' location
-  let baseLocation = locations[keys[randomKeyIndex]];
-
-  return `${keys[randomKeyIndex]} - ${
-    baseLocation[randomInteger(0, baseLocation.length - 1)]
-  }`;
+  return LOCATIONS[randomInteger(0, LOCATIONS.length - 1)];
 }
 
 console.log(getRandomLocation());
@@ -34,6 +25,7 @@ client.on("message", (message) => {
     args = args.splice(1);
 
     switch (cmd) {
+      case "p":
       case "ping":
         message.reply(getRandomLocation());
     }
