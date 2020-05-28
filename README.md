@@ -1,6 +1,6 @@
 ## Website ##
 
-www.where-to-drop.com
+where-to-drop.com
 
 ## Where to Drop - Warzone ##
 
