@@ -1,7 +1,3 @@
-## Website ##
-
-where-to-drop.com
-
 ## Where to Drop - Warzone ##
 
 Simple script that runs on `!ping` or `!p` command that randomly selects a location to drop in Call of Duty - Warzone.
