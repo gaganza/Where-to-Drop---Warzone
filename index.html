@@ -55,6 +55,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#where-to-drop">Drop Locations</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#statistics">Statistics</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -200,6 +203,28 @@
         </div>
       </div>
     </div>
+    <div class="statistics" id="statistics">
+      <div class="cards">
+          <div class="card statistic" style="width: 18rem;">
+              <div class="card-body">
+                  <p id="user-count" class="card-title" style="font-size: 50px !important;line-height: 15px !important;letter-spacing: -0.06em !important;font-weight: bold !important;">000</h1>
+                  <p style="font-weight: bold !important;font-size: 20px !important;">users</p>
+              </div>
+          </div>
+          <div class="card statistic" style="width: 18rem;">
+              <div class="card-body">
+                  <p id="channel-count" class="card-title" style="font-size: 50px !important;line-height: 15px !important;letter-spacing: -0.06em !important;font-weight: bold !important;">000</h1>
+                  <p style="font-weight: bold !important;font-size: 20px !important;">channels</p>
+              </div>
+          </div>
+      </div>
+    </div>
+    <script>
+      fetch('http://24.6.36.36:3000/bot-info').then(response => response.json()).then(json => {
+        document.getElementById('user-count').textContent = json.data.users.length;
+        document.getElementById('channel-count').textContent = json.data.channels.length;
+      });
+    </script>
     <div class="page_end">
       <div class="start">
         <div class="card">

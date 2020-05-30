@@ -17,7 +17,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get("/", (req, res, next) => {
+app.get("/bot-info", (req, res, next) => {
   let data = client.toJSON();
 
   res.send({
