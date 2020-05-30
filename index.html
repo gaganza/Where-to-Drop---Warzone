@@ -220,7 +220,7 @@
       </div>
     </div>
     <script>
-      fetch('http://24.6.36.36:3000/bot-info').then(response => response.json()).then(json => {
+      fetch('https://24.6.36.36:3000/bot-info').then(response => response.json()).then(json => {
         document.getElementById('user-count').textContent = json.data.users.length;
         document.getElementById('channel-count').textContent = json.data.channels.length;
       });
