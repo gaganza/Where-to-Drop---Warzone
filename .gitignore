@@ -1,7 +1,0 @@
-
-/node_modules
-
-# contains the Discrod auth token - this is private
-auth.json
-
-package-lock.json
